@@ -1,0 +1,65 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "Hero": {
+    "available": "Available for new opportunities",
+    "line1": "Building AI products",
+    "line2": "for teams that ship.",
+    "line3": "Nice to meet you, I’m <highlight>Pedro Monteiro.</highlight>",
+    "description": "I build modern web applications, integrate AI solutions and turn ideas into scalable products.",
+    "ctaProjects": "View My Projects",
+    "photoAlt": "Portrait of Pedro Monteiro",
+    "stackLabel": "Core stack",
+    "stack": {
+      "react": {
+        "value": "React",
+        "label": "Frontend"
+      },
+      "node": {
+        "value": "Node.js",
+        "label": "Backend"
+      },
+      "typescript": {
+        "value": "TypeScript",
+        "label": "Language"
+      },
+      "aws": {
+        "value": "AWS",
+        "label": "Cloud"
+      },
+      "ai": {
+        "value": "AI / RAG",
+        "label": "Intelligence"
+      }
+    },
+    "ctaAskAi": "Ask my AI"
+  },
+  "Header": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "cta": "Let’s Talk",
+    "logoAlt": "Monteiro Dev logo",
+    "home": "Go to top",
+    "navLabel": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "github": "GitHub",
+    "resume": "Resume",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme"
+  },
+  "Loader": {
+    "loading": "Loading portfolio",
+    "status": "Loading portfolio"
+  },
+  "Announcement": {
+    "label": "Announcement",
+    "tag": "New",
+    "text": "Ask my AI anything about my work."
+  }
+}

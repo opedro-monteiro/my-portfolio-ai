@@ -1,0 +1,65 @@
+{
+  "HomePage": {
+    "title": "Eae Mundo !"
+  },
+  "Hero": {
+    "available": "Disponível para novas oportunidades",
+    "line1": "Construindo produtos de IA",
+    "line2": "para times que entregam.",
+    "line3": "Prazer, eu sou <highlight>Pedro Monteiro.</highlight>",
+    "description": "Construo aplicações web modernas, integro soluções de IA e transformo ideias em produtos escaláveis.",
+    "ctaProjects": "Ver Meus Projetos",
+    "photoAlt": "Retrato de Pedro Monteiro",
+    "stackLabel": "Stack principal",
+    "stack": {
+      "react": {
+        "value": "React",
+        "label": "Frontend"
+      },
+      "node": {
+        "value": "Node.js",
+        "label": "Backend"
+      },
+      "typescript": {
+        "value": "TypeScript",
+        "label": "Linguagem"
+      },
+      "aws": {
+        "value": "AWS",
+        "label": "Cloud"
+      },
+      "ai": {
+        "value": "IA / RAG",
+        "label": "Inteligência"
+      }
+    },
+    "ctaAskAi": "Pergunte à minha IA"
+  },
+  "Header": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Skills",
+    "experience": "Experiência",
+    "contact": "Contato",
+    "cta": "Vamos Conversar",
+    "logoAlt": "Logo Monteiro Dev",
+    "home": "Ir para o topo",
+    "navLabel": "Navegação principal",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "language": "Idioma",
+    "github": "GitHub",
+    "resume": "Currículo",
+    "themeToLight": "Mudar para o tema claro",
+    "themeToDark": "Mudar para o tema escuro"
+  },
+  "Loader": {
+    "loading": "Carregando portfólio",
+    "status": "Carregando portfólio"
+  },
+  "Announcement": {
+    "label": "Aviso",
+    "tag": "Novo",
+    "text": "Pergunte à minha IA sobre o meu trabalho."
+  }
+}
