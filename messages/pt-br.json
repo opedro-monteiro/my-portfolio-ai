@@ -3,12 +3,9 @@
     "title": "Eae Mundo !"
   },
   "Hero": {
-    "available": "Disponível para novas oportunidades",
-    "line1": "Construindo produtos de IA",
-    "line2": "para times que entregam.",
-    "line3": "Prazer, eu sou <highlight>Pedro Monteiro.</highlight>",
-    "description": "Construo aplicações web modernas, integro soluções de IA e transformo ideias em produtos escaláveis.",
-    "ctaProjects": "Ver Meus Projetos",
+    "available": "Disponível para oportunidades · Full-time",
+    "description": "Applied AI Engineer com foco em desenvolvimento end-to-end. Construo aplicações web completas, conectando backend, frontend e inteligência artificial para transformar ideias em produtos funcionais, inteligentes e prontos para produção.",
+    "ctaProjects": "Ver projetos",
     "photoAlt": "Retrato de Pedro Monteiro",
     "stackLabel": "Stack principal",
     "stack": {
@@ -33,7 +30,10 @@
         "label": "Inteligência"
       }
     },
-    "ctaAskAi": "Pergunte à minha IA"
+    "headline": "Engenharia de software e IA aplicada para construir produtos digitais de ponta a ponta.",
+    "greeting": "Prazer, sou <highlight>Pedro Monteiro.</highlight>",
+    "role": "Applied AI Engineer · End-to-End Software Development",
+    "ctaAskAi": "Falar com a IA"
   },
   "Header": {
     "about": "Sobre",

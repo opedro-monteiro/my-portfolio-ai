@@ -14,6 +14,11 @@
   --primary-foreground: #191510;
   --primary-text: #f5c451;
   --nav-height: 62px;
+  --announce-height: 34px;
+  /* Announcement bar + sticky header + their borders */
+  --chrome-height: calc(var(--nav-height) + var(--announce-height) + 2px);
+  /* Hero fits the first screen on laptops/desktops: whatever is left under the chrome */
+  --hero-h: min(1000px, max(520px, calc(100svh - var(--chrome-height))));
 }
 
 :root[data-theme="light"] {
@@ -64,4 +69,17 @@ body {
 .hero-line-mask {
   padding-bottom: 0.14em;
   margin-bottom: -0.14em;
+}
+
+/* Theme toggle: circular reveal (clip-path animated from ThemeToggle.tsx) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 2;
 }

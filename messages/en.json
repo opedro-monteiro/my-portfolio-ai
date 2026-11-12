@@ -3,12 +3,9 @@
     "title": "Hello world!"
   },
   "Hero": {
-    "available": "Available for new opportunities",
-    "line1": "Building AI products",
-    "line2": "for teams that ship.",
-    "line3": "Nice to meet you, I’m <highlight>Pedro Monteiro.</highlight>",
-    "description": "I build modern web applications, integrate AI solutions and turn ideas into scalable products.",
-    "ctaProjects": "View My Projects",
+    "available": "Available for opportunities · Full-time",
+    "description": "Applied AI Engineer focused on end-to-end development. I build complete web applications, connecting backend, frontend and artificial intelligence to turn ideas into functional, intelligent, production-ready products.",
+    "ctaProjects": "View projects",
     "photoAlt": "Portrait of Pedro Monteiro",
     "stackLabel": "Core stack",
     "stack": {
@@ -33,7 +30,10 @@
         "label": "Intelligence"
       }
     },
-    "ctaAskAi": "Ask my AI"
+    "headline": "Software engineering and applied AI to build digital products end to end.",
+    "greeting": "Nice to meet you, I’m <highlight>Pedro Monteiro.</highlight>",
+    "role": "Applied AI Engineer · End-to-End Software Development",
+    "ctaAskAi": "Talk to my AI"
   },
   "Header": {
     "about": "About",

@@ -3,6 +3,7 @@
 import { useRef, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
+import { useIntro } from "@/components/intro/IntroProvider";
 
 type Theme = "light" | "dark";
 
@@ -29,11 +30,44 @@ const getServerSnapshot = (): Theme => "dark";
 export function ThemeToggle({ className }: { className?: string }) {
   const t = useTranslations("Header");
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const { replay } = useIntro();
   const icon = useRef<HTMLSpanElement>(null);
 
-  const toggle = () => {
-    applyTheme(theme === "dark" ? "light" : "dark");
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const toggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduced || !document.startViewTransition) {
+      applyTheme(next);
+      if (reduced) return;
+    } else {
+      // Circular reveal growing from the toggle to the farthest corner.
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      const radius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y),
+      );
+      const transition = document.startViewTransition(() => applyTheme(next));
+      transition.ready.then(() => {
+        // Entrance animations replay underneath the expanding circle.
+        replay();
+        document.documentElement.animate(
+          {
+            clipPath: [
+              `circle(0px at ${x}px ${y}px)`,
+              `circle(${radius}px at ${x}px ${y}px)`,
+            ],
+          },
+          {
+            duration: 700,
+            easing: "cubic-bezier(.65,0,.35,1)",
+            pseudoElement: "::view-transition-new(root)",
+          },
+        );
+      });
+    }
     // One-shot tween on the icon; finishes on its own, nothing to clean up.
     gsap.fromTo(
       icon.current,

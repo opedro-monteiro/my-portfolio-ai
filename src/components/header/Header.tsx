@@ -21,6 +21,16 @@ const FOCUS =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 const UTILITY_LINK = `rounded-[6px] text-[13px] leading-none text-muted-foreground transition-colors hover:text-foreground ${FOCUS}`;
 
+/** Drawn from public/github.svg as a mask, so it takes the text colour (white on dark, black on light). */
+function GithubIcon() {
+  return (
+    <span
+      aria-hidden
+      className="size-4 shrink-0 bg-current [-webkit-mask:url(/github.svg)_center/contain_no-repeat] [mask:url(/github.svg)_center/contain_no-repeat]"
+    />
+  );
+}
+
 function ArrowRightIcon() {
   return (
     <svg
@@ -42,7 +52,7 @@ export function Header() {
   const t = useTranslations("Header");
   const locale = useLocale();
   const pathname = usePathname();
-  const { ready } = useIntro();
+  const { ready, replayKey } = useIntro();
   const [open, setOpen] = useState(false);
 
   const root = useRef<HTMLElement>(null);
@@ -77,10 +87,10 @@ export function Header() {
       if (!ready) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      gsap
-        .timeline({ defaults: { ease: "power3.out" } })
-        .from(root.current, { yPercent: -100, duration: 0.9 })
-        .from("[data-header=logo]", { autoAlpha: 0, x: -14, duration: 0.7 }, 0.25)
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      // The bar itself only slides in on the first load; replays keep it in place.
+      if (replayKey === 0) tl.from(root.current, { yPercent: -100, duration: 0.9 });
+      tl.from("[data-header=logo]", { autoAlpha: 0, x: -14, duration: 0.7 }, 0.25)
         .from(
           "[data-header=item]",
           { autoAlpha: 0, y: -10, duration: 0.6, stagger: 0.06 },
@@ -92,7 +102,7 @@ export function Header() {
           0.5,
         );
     },
-    { scope: root, dependencies: [ready] },
+    { scope: root, dependencies: [ready, replayKey], revertOnUpdate: true },
   );
 
   const toggleMenu = () => {
@@ -178,8 +188,9 @@ export function Header() {
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={UTILITY_LINK}
+            className={`${UTILITY_LINK} flex items-center gap-1.5`}
           >
+            <GithubIcon />
             {t("github")}
           </a>
         </li>
@@ -267,8 +278,9 @@ export function Header() {
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground"
             >
+              <GithubIcon />
               {t("github")}
             </a>
             <a
